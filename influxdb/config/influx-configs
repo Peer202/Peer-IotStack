@@ -1,0 +1,20 @@
+[default]
+  url = "http://influxdb:8086"
+  token = "BxXFp7Ss7SzXi9HsTfqPE9Db3hWmv8eF0mQ_cPp0kJrJ3-Rcn0JoHBFBiBc0-ctixJAtnctbhZiozK9AiM1HTw=="
+  org = "Iotstack"
+  active = true
+# 
+# [eu-central]
+#   url = "https://eu-central-1-1.aws.cloud2.influxdata.com"
+#   token = "XXX"
+#   org = ""
+# 
+# [us-central]
+#   url = "https://us-central1-1.gcp.cloud2.influxdata.com"
+#   token = "XXX"
+#   org = ""
+# 
+# [us-west]
+#   url = "https://us-west-2-1.aws.cloud2.influxdata.com"
+#   token = "XXX"
+#   org = ""

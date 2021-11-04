@@ -1,0 +1,40 @@
+--- 
+services: 
+  mosquitto: 
+    image: eclipse-mosquitto
+    ports: 
+      - "1883:1883"
+      - "9001:9001"
+    volumes: 
+      - "/home/docker/projectfiles/iotstack/mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf"
+      - "/home/docker/projectfiles/iotstack/mosquitto/data/:/mosquitto/data"
+      - "/home/docker/projectfiles/iotstack/mosquitto/log:/mosquitto/log"
+ 
+  nodered:
+    image: nodered/node-red
+    ports:
+      - "1880:1880"
+    volumes:
+      - "/home/docker/projectfiles/iotstack/nodered/data:/data"
+    user: "1003:1003"   
+
+  grafana:
+    image: grafana/grafana
+    ports:
+     - "3000:3000"
+    user: "1003:1003"
+    volumes:
+     - "/home/docker/projectfiles/iotstack/grafana/:/var/lib/grafana"
+
+  influxdb:
+    image: influxdb:2.0
+    ports:
+     - "8086:8086"
+    volumes:
+     - "/home/docker/projectfiles/iotstack/influxdb/data:/root/influxdb/data"
+     - "/home/docker/projectfiles/iotstack/influxdb/var:/var/lib/influxdb2"
+     - "/home/docker/projectfiles/iotstack/influxdb/config:/etc/influxdb2"
+
+version: "3.7"
+
+
